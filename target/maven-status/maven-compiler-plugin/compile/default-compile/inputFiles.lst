@@ -1,1 +1,6 @@
+/Users/Shengwei_Wang/GitHub/mvn_spring/helloworld/src/main/java/ut/springmvc/model/Stock.java
+/Users/Shengwei_Wang/GitHub/mvn_spring/helloworld/src/main/java/ut/springmvc/dao/StockDao.java
+/Users/Shengwei_Wang/GitHub/mvn_spring/helloworld/src/main/java/ut/springmvc/dao/JdbcStockDaoImpl.java
+/Users/Shengwei_Wang/GitHub/mvn_spring/helloworld/src/main/java/ut/springmvc/bo/StockBOImplement.java
 /Users/Shengwei_Wang/GitHub/mvn_spring/helloworld/src/main/java/ut/springmvc/controller/Hello.java
+/Users/Shengwei_Wang/GitHub/mvn_spring/helloworld/src/main/java/ut/springmvc/bo/StockBO.java
