@@ -7,24 +7,87 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>helloworld Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
+  <properties>
+    <appengine.sdk.version>1.9.49</appengine.sdk.version>
+    <appengine.app.version>1</appengine.app.version>
+
+    <project.http.version>1.19.0</project.http.version>
+    <project.oauth.version>1.19.0</project.oauth.version>
+
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    
+    <spring.version>3.2.5.RELEASE</spring.version>
+  </properties>
+
   <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5</version>
+      <scope>provided</scope>
+    </dependency>
+    
+  	<dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>${appengine.sdk.version}</version>
+    </dependency>
+    <dependency>
+         <groupId>jstl</groupId>
+         <artifactId>jstl</artifactId>
+         <version>1.2</version>
+     </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-web</artifactId>
-    	<version>3.2.5.RELEASE</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-jdbc</artifactId>
-        <version>4.0.6.RELEASE</version>
-    </dependency>
+
     
+    <dependency>
+     <groupId>org.springframework</groupId>
+     <artifactId>spring-beans</artifactId>
+     <version>${spring.version}</version>
+ 	</dependency>
+  
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>${spring.version}</version>
+	 </dependency>
+	  
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>${spring.version}</version>
+	 </dependency>
+	  
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	     <version>${spring.version}</version>
+	 </dependency>
+	  
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-web</artifactId>
+	    <version>${spring.version}</version>
+	 </dependency>
+	  
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jms</artifactId>
+	    <version>${spring.version}</version>
+	 </dependency>
+	 
+	 <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jdbc</artifactId>
+	    <version>${spring.version}</version>
+	 </dependency>
     <!-- MySQL database driver -->
 	<dependency>
 		<groupId>mysql</groupId>
@@ -35,6 +98,7 @@
  
   <build>
     <finalName>helloworld</finalName>
+    <outputDirectory>target/${project.artifactId}/WEB-INF/classes</outputDirectory>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -48,7 +112,43 @@
 		      <password>password</password>   
 		    </configuration>   
         </plugin>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+	        <version>3.3</version>
+	        <artifactId>maven-compiler-plugin</artifactId>
+	        <configuration>
+	          <source>1.7</source>
+	          <target>1.7</target>
+	        </configuration>
+        </plugin>
+        <plugin>
+	        <groupId>com.google.appengine</groupId>
+	        <artifactId>appengine-maven-plugin</artifactId>
+	        <version>${appengine.sdk.version}</version>
+      	</plugin>
       </plugins> 
     </pluginManagement>
+    <plugins>
+    
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>3.3</version>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+      <!-- Parent POM defines ${appengine.sdk.version} (updates frequently). -->
+      <plugin>
+        <groupId>com.google.appengine</groupId>
+        <artifactId>appengine-maven-plugin</artifactId>
+        <version>${appengine.sdk.version}</version>
+        <configuration>
+             <enableJarClasses>true</enableJarClasses>
+             <port>8080</port>
+         </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>

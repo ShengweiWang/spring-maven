@@ -7,6 +7,6 @@
     <title>Insert title here</title>
 
     <body>
-    <h1>message:₵{message}</h1>
+    <h1>message:${message}</h1>
     </body>
     </html>
