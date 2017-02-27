@@ -1,6 +1,6 @@
-ut/springmvc/bo/StockBOImplement.class
-ut/springmvc/bo/StockBO.class
+ut/springmvc/bo/StockBoImpl.class
 ut/springmvc/model/Stock.class
+ut/springmvc/bo/StockBo.class
 ut/springmvc/controller/Hello.class
 ut/springmvc/dao/JdbcStockDaoImpl.class
 ut/springmvc/dao/StockDao.class
