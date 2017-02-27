@@ -1,12 +1,6 @@
 package ut.springmvc.dao;
 
 import java.sql.Timestamp;
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> ad2e6a53680d22418f2d5dbe84349a0e80705468
 import org.junit.Test;
 
 import junit.framework.TestCase;
