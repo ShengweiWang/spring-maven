@@ -1,6 +1,6 @@
 package ut.springmvc.bo;
 
-import ut.springmvc.model.*;
+import ut.springmvc.model.Stock;
 
 public interface StockBo {
 	
