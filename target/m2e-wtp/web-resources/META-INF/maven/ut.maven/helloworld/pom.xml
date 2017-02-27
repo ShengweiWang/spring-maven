@@ -19,26 +19,22 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     
     <spring.version>3.2.5.RELEASE</spring.version>
+    <!-- Hibernate / JPA -->
+	<!-- <hibernate.version>4.3.5.Final</hibernate.version> -->
+	<hibernate.version>3.6.3.Final</hibernate.version>
+	
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
-      <scope>provided</scope>
-    </dependency>
     
   	<dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-1.0-sdk</artifactId>
             <version>${appengine.sdk.version}</version>
     </dependency>
-    <dependency>
-         <groupId>jstl</groupId>
-         <artifactId>jstl</artifactId>
-         <version>1.2</version>
-     </dependency>
+    
+    
+     
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -46,7 +42,7 @@
       <scope>test</scope>
     </dependency>
 
-    
+    <!-- spring  -->
     <dependency>
      <groupId>org.springframework</groupId>
      <artifactId>spring-beans</artifactId>
@@ -88,6 +84,46 @@
 	    <artifactId>spring-jdbc</artifactId>
 	    <version>${spring.version}</version>
 	 </dependency>
+	 
+	 
+	 
+        
+     <!-- Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/javassist/javassist -->
+		<dependency>
+		    <groupId>javassist</groupId>
+		    <artifactId>javassist</artifactId>
+		    <version>3.12.1.GA</version>
+		</dependency>
+        
+        <!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.0</version>
+        </dependency>
+
+		
+		
+		
+		<dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.1</version>
+		</dependency>
+
+
     <!-- MySQL database driver -->
 	<dependency>
 		<groupId>mysql</groupId>
@@ -99,37 +135,7 @@
   <build>
     <finalName>helloworld</finalName>
     <outputDirectory>target/${project.artifactId}/WEB-INF/classes</outputDirectory>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.tomcat.maven</groupId>  
-		    <artifactId>tomcat7-maven-plugin</artifactId>  
-		    <version>2.2</version>  
-		    <configuration>  
-		      <url>http://localhost:8080/helloworld</url>  
-		      <server>TomcatServer</server>
-		      <username>username</username>  
-		      <password>password</password>   
-		    </configuration>   
-        </plugin>
-        <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-	        <version>3.3</version>
-	        <artifactId>maven-compiler-plugin</artifactId>
-	        <configuration>
-	          <source>1.7</source>
-	          <target>1.7</target>
-	        </configuration>
-        </plugin>
-        <plugin>
-	        <groupId>com.google.appengine</groupId>
-	        <artifactId>appengine-maven-plugin</artifactId>
-	        <version>${appengine.sdk.version}</version>
-      	</plugin>
-      </plugins> 
-    </pluginManagement>
     <plugins>
-    
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <version>3.3</version>

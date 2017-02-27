@@ -2,7 +2,7 @@ package ut.springmvc.bo;
 
 import ut.springmvc.model.*;
 
-public interface StockBO {
+public interface StockBo {
 	
 	void save(Stock stock);
 	void update(Stock stock);

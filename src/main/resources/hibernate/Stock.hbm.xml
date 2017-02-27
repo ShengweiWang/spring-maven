@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ut.springmvc.model.Stock" table="stock_price">
+        <id name="name" type="string">
+            <column name="NAME" length="20" not-null="true" unique="true"/>
+        </id>
+        <property name="time" type="string">
+            <column name="TIME" length="20" not-null="true" unique="true" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="price"/>
+        </property>
+    </class>
+</hibernate-mapping>
